@@ -1,4 +1,4 @@
-package org.rail;
+package org.rail.firstTen;
 
 
 public class Example {

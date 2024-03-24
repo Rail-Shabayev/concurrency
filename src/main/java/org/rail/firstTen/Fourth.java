@@ -1,16 +1,18 @@
-package org.rail;
+package org.rail.firstTen;
 
-public class Second {
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class Fourth {
     public static void main(String[] args) {
-        new Thread(new Fibonacci(18)).start();
-        new Thread(new Fibonacci(6)).start();
-        new Thread(new Fibonacci(8)).start();
-    }
-    public interface Generator<T> {
-        T next();
+        try (ExecutorService exec = Executors.newCachedThreadPool()) {
+            exec.submit(new Fibonacci(18));
+            exec.submit(new Fibonacci(9));
+            exec.submit(new Fibonacci(4));
+        }
     }
 
-    static class Fibonacci implements Generator<Integer>, Runnable {
+    static class Fibonacci implements Second.Generator<Integer>, Runnable {
         int n;
         private int count = 0;
 
@@ -30,10 +32,11 @@ public class Second {
 
         @Override
         public void run() {
-            for (int i = 0; i < n ; i++) {
+            for (int i = 0; i < n; i++) {
                 System.out.println(Thread.currentThread().getName() + " " + next() + " ");
             }
             System.out.println("Fibonacci finished - " + Thread.currentThread().getName());
         }
     }
 }
+

@@ -1,4 +1,4 @@
-package org.rail;
+package org.rail.firstTen;
 
 import java.util.Random;
 import java.util.concurrent.*;

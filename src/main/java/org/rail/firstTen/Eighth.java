@@ -1,6 +1,6 @@
-package org.rail;
+package org.rail.firstTen;
 
-import static org.rail.Example.*;
+import static org.rail.firstTen.Example.*;
 
 public class Eighth {
     public static void main(String[] args) {
