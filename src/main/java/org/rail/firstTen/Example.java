@@ -8,7 +8,7 @@ public class Example {
         }
         System.out.println("waiting");
     }
-    static class LiftOff implements Runnable {
+    public static class LiftOff implements Runnable {
         protected int countDown = 10; // Default
         private static int taskCount = 0;
         private final int id = taskCount++;
